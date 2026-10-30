@@ -1,0 +1,18 @@
+#tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* 3 columnas de 100px de ancho */
+  grid-template-rows: repeat(3, 100px);    /* 3 filas de 100px de alto */
+  gap: 10px;                               /* Espacio de 10px entre cada hoyo */
+  justify-content: center;                 /* Centra el tablero en la pantalla */
+}
+.hoyo {
+  background-color: #8B4513; /* Color café para simular tierra */
+  border-radius: 50%;        /* Hace que la casilla sea circular */
+  cursor: pointer;           /* Cambia el puntero al pasar el mouse */
+  border: 4px solid #5c2c0c;  /* Un borde más oscuro para darle relieve */
+}
+.hoyo.topo {
+  background-image: url('topo.jfif'); /* Coloca una imagen del topo */
+  background-size: cover;            /* Ajusta la imagen al tamaño del hoyo */
+  background-position: center;
+}
