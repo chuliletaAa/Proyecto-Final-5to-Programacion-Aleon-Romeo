@@ -1,0 +1,35 @@
+p{
+  font-size:30px;
+}
+
+body{
+  background-color: rgb(219, 204, 154);
+  text-align: center;
+  justify-content: center; 
+}
+
+#tablero {
+  display: grid;
+   grid-template-columns: repeat(3, 173px); /* 3 columnas de 100 de ancho */
+   grid-template-rows: repeat(3, 173px);    /* 3 filas de 100 de alto */
+  gap: 10px;                               /* Espacio de 10px entre cada hoyo */             
+  background-color: antiquewhite;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  height:540px;
+  width:540px;
+  background-image: url('imagenes/pasto.png');
+  border-radius:10px;
+  border:3px solid rgb(33, 66, 18);
+}
+#hoyo {
+width:173px;
+height:173px;
+background-size:cover;
+  background-image: url('./imagenes/hoyo.png');
+}
+/* .hoyo.topo {
+  background-image: url('imagenes/topo.jfif'); /* Coloca una imagen del topo */
+  /* background-size: cover;            /*ajusta la imagen para q cubra todo */
+  
+/*}
