@@ -9,12 +9,33 @@ let hoyos = [
     document.getElementById("hoyo7"),
     document.getElementById("hoyo8")
 ]
+const divContador = document.getElementById("divContador");
+let hoyoElegido = null;
+let generaRandom = 0
 
-hoyos[numeroRandom] //accedo a una de las etiquetas hoyo aleatoriamente, debo generar numeroRandom con math.random
-let numeroRandom=Math.floor(Math.random()*10); //genero un numero del 1 al 9 aleatoriamente y lo almaceno en numeroRandom para posteriormente utilizarlo
+function genera() {
 
+    generaRandom = Math.floor(Math.random() * hoyos.length);//genero un numero del 1 al 9 aleatoriamente y lo almaceno en generaRandom para posteriormente utilizarlo
+    hoyoElegido = hoyos[generaRandom]//accedo a una de las etiquetas hoyo aleatoriamente, debo generar numeroRandom con math.random
 
-hoyos[numeroRandom].childNodes[0].style.display = "none" // agarra la etiqueta hoyo random, busca su primer hijo y lo oculta
-hoyos[numeroRandom].childNodes[0].style.display = "block" 
+    hoyoElegido.style.backgroundImage = "url('./imagenes/topo.jpg')";
+}
 
+hoyos.forEach((hoyo) => {
+   
+    hoyo.addEventListener("click", golpeTopo)
+})
 
+genera()
+
+let contador = 0
+function golpeTopo() {
+    if ("click"==hoyoElegido){ // preguntar (if) si el hoyo clickeado es == al hoyo elegido por la maquina ????????
+
+    contador++
+    divContador.innerHTML = "puntos: " + contador;
+    hoyoElegido.style.backgroundImage = "url('./imagenes/hoyo.png')"; // agarra la etiqueta hoyo random y lo oculta
+
+    
+    }
+}
